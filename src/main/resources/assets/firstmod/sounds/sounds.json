@@ -1,7 +1,7 @@
 {
-  "fart_sound": {
+  "menu8bit": {
     "sounds": [
-      "firstmod:fart_sound"
+      "firstmod:menu8bit"
     ]
   }
 }
