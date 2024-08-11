@@ -1,6 +1,9 @@
 package net.chardo440.firstmod;
 
+import net.chardo440.firstmod.block.ModBlocks;
+import net.chardo440.firstmod.item.ModCreativeModeTabs;
 import net.chardo440.firstmod.item.ModItems;
+import net.chardo440.firstmod.sound.ModSOunds;
 import net.minecraft.world.item.CreativeModeTabs;
 import org.slf4j.Logger;
 
@@ -39,7 +42,11 @@ public class FirstmodMod
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
+        ModCreativeModeTabs.register((modEventBus));
+
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
+        ModSOunds.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in.
         // Note that this is necessary if and only if we want *this* class (ExampleMod) to respond directly to events.
