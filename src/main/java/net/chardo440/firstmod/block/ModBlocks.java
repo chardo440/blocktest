@@ -9,8 +9,12 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
+import net.minecraft.world.level.block.SoundType;
+import net.chardo440.firstmod.sound.ModSOunds;
 
 import java.util.function.Supplier;
+
+import static net.chardo440.firstmod.sound.ModSOunds.FART_SOUND;
 
 public class ModBlocks {
     public static final DeferredRegister.Blocks BLOCKS =
@@ -34,7 +38,7 @@ public class ModBlocks {
                     .strength(4f)
                     .noOcclusion()
                     .lightLevel((state)->12)
-                    .sound()
+                    .sound(ModSOunds.getCustomFartSound())
                     .requiresCorrectToolForDrops()));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
