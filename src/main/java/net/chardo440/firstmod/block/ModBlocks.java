@@ -37,7 +37,7 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.of()
                     .strength(4f)
                     .noOcclusion()
-                    .lightLevel((state)->12)
+                    .lightLevel((state)->15)
                     .sound(ModSOunds.getCustomFartSound())
                     .requiresCorrectToolForDrops()));
 

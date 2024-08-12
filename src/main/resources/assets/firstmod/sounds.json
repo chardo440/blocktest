@@ -1,7 +1,7 @@
 {
-  "fart_sound": {
+  "metalhitchains": {
     "sounds": [
-      "firstmod:fart_sound"
+      "firstmod:metalhitchains"
     ]
   }
 }

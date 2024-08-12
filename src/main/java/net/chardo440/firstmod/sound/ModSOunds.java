@@ -15,7 +15,7 @@ public class ModSOunds {
     public static final DeferredRegister<SoundEvent> SOUND_EVENTS =
             DeferredRegister.create(BuiltInRegistries.SOUND_EVENT, FirstmodMod.MOD_ID);
 
-    public static final Supplier<SoundEvent> FART_SOUND = registerSoundEvent("fart_sound");
+    public static final Supplier<SoundEvent> FART_SOUND = registerSoundEvent("metalhitchains");
 
     private static Supplier<SoundEvent> registerSoundEvent(String name) {
         ResourceLocation id = ResourceLocation.fromNamespaceAndPath(FirstmodMod.MOD_ID, name);

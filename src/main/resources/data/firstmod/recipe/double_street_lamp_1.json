@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "minecraft:cobblestone"
+    },
+    "W": {
+      "item": "minecraft:oak_fence"
+    },
+    "L": {
+      "item": "firstmod:lamp_1"
+    }
+  },
+  "pattern": [
+    "LWL",
+    " W ",
+    " C "
+  ],
+  "result": {
+    "count": 1,
+    "id": "firstmod:double_street_lamp_1"
+  }
+}
