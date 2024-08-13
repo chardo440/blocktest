@@ -1,5 +1,6 @@
 package net.chardo440.firstmod.block;
 
+import com.sun.jna.platform.unix.X11;
 import net.chardo440.firstmod.FirstmodMod;
 import net.chardo440.firstmod.item.ModItems;
 import net.minecraft.world.item.BlockItem;
@@ -40,6 +41,24 @@ public class ModBlocks {
                     .lightLevel((state)->15)
                     .sound(ModSOunds.getCustomFartSound())
                     .requiresCorrectToolForDrops()));
+
+    public static final DeferredBlock<Block> IRON_LANTERN_1 = registerBlock("iron_lantern_1",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .strength(4f)
+                    .noOcclusion()
+                    //.lightLevel((state)->15)
+                    .isViewBlocking((state,reader,pos) -> false)
+                    .emissiveRendering((state, reader, pos) -> true)
+                    .requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> LOKI_GLASS = registerBlock("loki_glass",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .strength(4f)
+                    .noOcclusion()
+                    .lightLevel((state)->12)
+                    .isViewBlocking((state,reader,pos) -> false)
+                    .emissiveRendering((state, reader, pos) -> true)
+                    .requiresCorrectToolForDrops()));
+
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

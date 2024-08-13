@@ -4,6 +4,8 @@ import net.chardo440.firstmod.block.ModBlocks;
 import net.chardo440.firstmod.item.ModCreativeModeTabs;
 import net.chardo440.firstmod.item.ModItems;
 import net.chardo440.firstmod.sound.ModSOunds;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.item.CreativeModeTabs;
 import org.slf4j.Logger;
 
@@ -81,6 +83,7 @@ public class FirstmodMod
         }
     }
 
+
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event)
@@ -99,6 +102,11 @@ public class FirstmodMod
             // Some client setup code
             LOGGER.info("HELLO FROM CLIENT SETUP");
             LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
+
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.IRON_LANTERN_1.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.DOUBLE_STREET_LAMP_1.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.LOKI_GLASS.get(), RenderType.translucent());
+
         }
     }
 }

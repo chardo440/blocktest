@@ -24,6 +24,7 @@ public class ModCreativeModeTabs {
                     .displayItems((pParameters, pOutput) -> {
                         pOutput.accept(ModItems.BLACK_OPAL);
                         pOutput.accept(ModItems.RAW_BLACK_OPAL);
+                        pOutput.accept(ModItems.CHAINSAW);
 
                     }).build());
 
@@ -38,6 +39,9 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModBlocks.RAW_BLACK_OPAL_BLOCK);
                         pOutput.accept(ModBlocks.LAMP_1);
                         pOutput.accept(ModBlocks.DOUBLE_STREET_LAMP_1);
+                        pOutput.accept(ModBlocks.IRON_LANTERN_1);
+                        pOutput.accept(ModBlocks.LOKI_GLASS);
+
 
                     }).build());
 
