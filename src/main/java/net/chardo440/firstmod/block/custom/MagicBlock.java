@@ -43,15 +43,23 @@ public class MagicBlock extends Block {
 
         level.playSound(null, pos, SoundEvents.FIREWORK_ROCKET_LAUNCH, SoundSource.BLOCKS, 3.0F, 1.0F);
 
-        if (level instanceof ServerLevel) {
-            FireworkExplosionHandler.handleFireworkExplosion((ServerLevel) level, firework);
+        if (level instanceof ServerLevel serverLevel) {
+            // Create explosion effect without destroying blocks
+            serverLevel.sendParticles(ParticleTypes.EXPLOSION, pos.getX(), pos.getY(), pos.getZ(), 1, 0, 0, 0, 0.1);
+            serverLevel.playSound(null, pos, SoundEvents.GENERIC_EXPLODE, SoundSource.BLOCKS, 3.0F, 1.0F);
+
+            // Remove the firework entity
+            firework.discard();
+
+            // Handle the loot drop
+            FireworkExplosionHandler.handleFireworkExplosion(serverLevel, firework);
         }
 
         return InteractionResult.SUCCESS;
     }
 
 
-    // Handles entity stepping on the block
+        // Handles entity stepping on the block
     @Override
     public void stepOn(Level level, BlockPos pos, BlockState state, Entity entity) {
         if (entity instanceof ItemEntity itemEntity) {
