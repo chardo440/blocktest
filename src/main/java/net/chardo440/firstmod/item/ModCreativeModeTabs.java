@@ -25,6 +25,7 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.BLACK_OPAL);
                         pOutput.accept(ModItems.RAW_BLACK_OPAL);
                         pOutput.accept(ModItems.CHAINSAW);
+                        pOutput.accept(ModItems.TOMATO);
 
                     }).build());
 
@@ -41,6 +42,7 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModBlocks.DOUBLE_STREET_LAMP_1);
                         pOutput.accept(ModBlocks.IRON_LANTERN_1);
                         pOutput.accept(ModBlocks.LOKI_GLASS);
+                        pOutput.accept(ModBlocks.MAGIC_BLOCK);
 
 
                     }).build());

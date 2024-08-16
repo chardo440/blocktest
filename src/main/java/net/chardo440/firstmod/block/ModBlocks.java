@@ -2,6 +2,7 @@ package net.chardo440.firstmod.block;
 
 import com.sun.jna.platform.unix.X11;
 import net.chardo440.firstmod.FirstmodMod;
+import net.chardo440.firstmod.block.custom.MagicBlock;
 import net.chardo440.firstmod.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -59,6 +60,13 @@ public class ModBlocks {
                     .emissiveRendering((state, reader, pos) -> true)
                     .requiresCorrectToolForDrops()));
 
+    public static final DeferredBlock<Block> MAGIC_BLOCK = registerBlock("magic_block",
+            () -> new MagicBlock(BlockBehaviour.Properties.of()
+                    .strength(4f)
+                    .noOcclusion()
+                    .lightLevel((state)->12)
+                    .requiresCorrectToolForDrops()));
+
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);
@@ -75,3 +83,4 @@ public class ModBlocks {
         BLOCKS.register(eventBus);
     }
 }
+
